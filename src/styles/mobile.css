@@ -1,0 +1,53 @@
+﻿/*
+ * Kisan Sarthi Mobile Styles
+ * Mobile-first responsive layout with safe areas.
+ */
+
+/* App shell container */
+.app-shell {
+  background: var(--bg-primary);
+  min-height: 100vh;
+  max-width: 430px;
+  margin: 0 auto;
+  font-family: var(--font-family);
+  position: relative;
+}
+
+/* Content area with bottom nav padding */
+.app-content {
+  padding: 14px 14px 110px;
+}
+
+/* Safe area support for notched devices */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .bottom-nav {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .app-content {
+    padding-bottom: calc(110px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Touch target minimums */
+@media (pointer: coarse) {
+  button,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Prevent overscroll bounce on iOS */
+html {
+  overscroll-behavior: none;
+}
+
+/* Desktop centering with subtle border */
+@media (min-width: 431px) {
+  .app-shell {
+    border-left: 1px solid var(--border-card);
+    border-right: 1px solid var(--border-card);
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+  }
+}

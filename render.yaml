@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: kisansat
+    env: static
+    buildCommand: npm run build
+    publishPath: dist
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: max-age=31536000
+    routes:
+      - src: /*
+        dest: /index.html

@@ -1,0 +1,345 @@
+﻿@import "leaflet/dist/leaflet.css";
+
+/* ===== Kisan Sarthi Framer Design System — Global Styles ===== */
+
+/* CSS Custom Properties */
+:root {
+  --ks-primary: #059669;
+  --ks-primary-light: #10b981;
+  --ks-primary-dark: #047857;
+  --ks-bg: #060f09;
+  --ks-bg-light: #0a1810;
+  --ks-bg-lighter: #0f2318;
+  --ks-text: #f0fdf4;
+  --ks-text-secondary: #86efac;
+  --ks-text-muted: #6b8f7b;
+  --ks-border: rgba(16, 185, 129, 0.15);
+  --ks-success: #10b981;
+  --ks-warning: #f59e0b;
+  --ks-danger: #ef4444;
+  --ks-font: 'Inter', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ks-radius: 16px;
+  --ks-radius-sm: 12px;
+  --ks-radius-xs: 8px;
+}
+
+/* ===== Framer Layout Shells ===== */
+
+.framer-app {
+  font-family: var(--ks-font);
+  background: var(--ks-bg);
+  color: var(--ks-text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Desktop dashboard layout (sidebar + content) */
+.framer-dashboard {
+  min-height: 100vh;
+}
+
+.framer-sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background: var(--ks-bg-light);
+  border-right: 1px solid var(--ks-border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.framer-sidebar-brand {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--ks-border);
+}
+
+.framer-sidebar-brand h1 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--ks-text);
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+.framer-sidebar-brand span {
+  font-size: 0.6875rem;
+  color: var(--ks-text-muted);
+  display: block;
+}
+
+.framer-sidebar-nav {
+  padding: 1rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.framer-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  color: var(--ks-text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-family: var(--ks-font);
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.framer-sidebar-item:hover {
+  color: var(--ks-text-secondary);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.framer-sidebar-item.active {
+  color: var(--ks-primary-light);
+  background: rgba(16, 185, 129, 0.1);
+  border-left-color: var(--ks-primary);
+}
+
+.framer-main {
+  margin-left: 260px;
+  min-height: 100vh;
+}
+
+.framer-topbar {
+  height: 64px;
+  background: var(--ks-bg-light);
+  border-bottom: 1px solid var(--ks-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(20px);
+}
+
+.framer-topbar h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--ks-text);
+  margin: 0;
+}
+
+.framer-content {
+  padding: 1.5rem 2rem;
+}
+
+/* ===== Mobile Farmer Shell ===== */
+
+.farmer-shell {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--ks-bg);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.farmer-header {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--ks-bg-light);
+  border-bottom: 1px solid var(--ks-border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(20px);
+}
+
+.farmer-content {
+  padding: 16px;
+  padding-bottom: 80px;
+  overflow-y: auto;
+}
+
+.farmer-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  background: var(--ks-bg-light);
+  border-top: 1px solid var(--ks-border);
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
+  z-index: 100;
+  backdrop-filter: blur(20px);
+}
+
+.farmer-nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ks-text-muted);
+  font-size: 0.625rem;
+  font-family: var(--ks-font);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.farmer-nav-btn.active {
+  color: var(--ks-primary-light);
+}
+
+/* ===== Glassmorphism Utility ===== */
+
+.glass {
+  background: rgba(10, 24, 16, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(16, 185, 129, 0.12);
+}
+
+.glass-card {
+  background: var(--ks-bg-light);
+  border: 1px solid var(--ks-border);
+  border-radius: var(--ks-radius);
+  backdrop-filter: blur(20px);
+}
+
+/* ===== Grid Utilities ===== */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+/* ===== Scrollbar Styling ===== */
+
+.framer-app ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.framer-app ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.framer-app ::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.2);
+  border-radius: 3px;
+}
+
+.framer-app ::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.4);
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 768px) {
+  .framer-sidebar {
+    display: none;
+  }
+
+  .framer-main {
+    margin-left: 0;
+  }
+
+  .framer-content {
+    padding: 1rem;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Animations ===== */
+
+@keyframes ks-glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(5, 150, 105, 0.1); }
+  50% { box-shadow: 0 0 40px rgba(5, 150, 105, 0.25); }
+}
+
+@keyframes ks-shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg,
+    var(--ks-bg-light) 0%,
+    var(--ks-bg-lighter) 50%,
+    var(--ks-bg-light) 100%
+  );
+  background-size: 200px 100%;
+  animation: ks-shimmer 1.5s infinite;
+}
+
+/* ===== Recharts Theme Overrides ===== */
+
+.framer-app .recharts-text {
+  fill: var(--ks-text-muted);
+  font-family: var(--ks-font);
+  font-size: 11px;
+}
+
+.framer-app .recharts-cartesian-grid line {
+  stroke: rgba(16, 185, 129, 0.08);
+}
+
+.framer-app .recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: var(--ks-bg-light) !important;
+  border: 1px solid var(--ks-border) !important;
+  border-radius: 12px !important;
+  font-family: var(--ks-font) !important;
+  font-size: 12px !important;
+}

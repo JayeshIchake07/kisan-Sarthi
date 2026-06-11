@@ -1,0 +1,37 @@
+[
+  {
+    "id": "pm-kisan",
+    "name": "PM-KISAN",
+    "fullName": "Pradhan Mantri Kisan Samman Nidhi",
+    "description": "Central sector scheme providing income support to all landholding farmer families across the country.",
+    "benefits": "₹6,000 per year paid in three equal installments of ₹2,000 directly into the bank accounts of the farmers."
+  },
+  {
+    "id": "pmfby",
+    "name": "PMFBY",
+    "fullName": "Pradhan Mantri Fasal Bima Yojana",
+    "description": "Government sponsored crop insurance scheme integrating multiple stakeholders to protect against crop yield loss.",
+    "benefits": "Comprehensive risk insurance for crop failure due to drought, flood, pests, or disease with low premium rates (1.5% - 2% for farmers)."
+  },
+  {
+    "id": "kcc",
+    "name": "KCC",
+    "fullName": "Kisan Credit Card Scheme",
+    "description": "Provides farmers with timely and hassle-free access to short-term credit for cultivation, crop production, and maintenance.",
+    "benefits": "Flexible revolving credit up to ₹3 Lakh at attractive interest rates (effectively 4% after interest subvention) with flexible repayment terms."
+  },
+  {
+    "id": "soil-health",
+    "name": "Soil Health Card",
+    "fullName": "Soil Health Card Scheme",
+    "description": "Assists state governments to issue Soil Health Cards to all farmers in the country to promote balanced crop nutrition.",
+    "benefits": "Free soil test card containing nutrient status of soil across 12 parameters and tailored dosage recommendations for fertilizer applications."
+  },
+  {
+    "id": "state-scheme",
+    "name": "MahaDBT Pokra",
+    "fullName": "Nanaji Deshmukh Krishi Sanjivani Prakalpa",
+    "description": "Maharashtra State initiative focusing on climate-resilient agriculture in drought-prone regions and salinity-affected basins.",
+    "benefits": "Up to 75% - 85% subsidies for micro-irrigation systems, farm ponds, plastic lining, agroforestry, and custom hiring centers."
+  }
+]

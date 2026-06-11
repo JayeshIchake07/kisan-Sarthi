@@ -1,0 +1,44 @@
+﻿/*
+ * Kisan Sarthi Theme — CSS Custom Properties
+ * All hardcoded colors from the original monolith mapped to reusable tokens.
+ */
+
+:root {
+  /* ─── Background tones ─────────────────────────────── */
+  --bg-primary: #060f09;
+  --bg-card: #0a1810;
+  --bg-input: #0f1e14;
+  --bg-statusbar: #030a05;
+
+  /* ─── Border tones ─────────────────────────────────── */
+  --border-card: #0f2016;
+  --border-elevated: #1e3a26;
+
+  /* ─── NDVI status colors ───────────────────────────── */
+  --color-healthy: #10b981;
+  --color-mild: #f59e0b;
+  --color-severe: #ef4444;
+
+  /* ─── Accent / CTA ─────────────────────────────────── */
+  --color-accent: #059669;
+  --color-accent-dark: #047857;
+  --color-accent-light: #6ee7b7;
+
+  /* ─── Text hierarchy ───────────────────────────────── */
+  --color-text-bright: #e2f4ea;
+  --color-text-primary: #c6f4d8;
+  --color-text-secondary: #b6e4cc;
+  --color-text-muted: #4a7060;
+  --color-text-dim: #1e4030;
+  --color-label: #3d7060;
+
+  /* ─── Alert colors ─────────────────────────────────── */
+  --color-alert-warning-bg: #1c0e00;
+  --color-alert-warning-border: #92400e;
+  --color-alert-critical-bg: #150505;
+  --color-alert-critical-border: #7f1d1d;
+
+  /* ─── Typography ───────────────────────────────────── */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
